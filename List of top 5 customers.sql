@@ -1,0 +1,1 @@
+SELECT users.id AS user_id, SUM(product.price * invoice_detail.quantity) AS total_transaction FROM users INNER JOIN invoice ON users.id = invoice.user_id INNER JOIN invoice_detail ON   invoice_detail.invoice_id = invoice.id INNER JOIN product ON invoice_detail.product_id = product.id GROUP BY users.id LIMIT 5

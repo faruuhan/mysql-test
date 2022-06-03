@@ -1,0 +1,1 @@
+SELECT id AS product_id, product.name AS product_name FROM product WHERE NOT EXISTS (SELECT * FROM invoice_detail WHERE product.id = invoice_detail.product_id) 
